@@ -105,7 +105,9 @@ export const usePoofStore = defineStore({
         })
         this.heroes = data.heroes
         this.move(`/${page}`)
-        this.getBackground()
+        this.getBackground(
+          "HEROES. AGI. STR. INT. ?. WARDS. NOOB. EARTHBIND. SHOCKWAVE. TIDAL WAVE. BLACKHOLE. ENSNARE. HOOF STOMP. LASER. PEW PEW."
+        )
       } catch (err) {}
     },
 
@@ -120,6 +122,9 @@ export const usePoofStore = defineStore({
           },
         })
         this.teams = data.teams
+        this.getBackground(
+          "META. MAJOR. WINS. LOSSES. PERCENTAGE. GLORY. CHASE. HEAD TO HEAD. AEGIS OF IMMORTALS. CHAMPIONS"
+        )
         this.move(`/teams/${page}`)
       } catch (err) {
         console.log(err)
@@ -137,6 +142,9 @@ export const usePoofStore = defineStore({
         })
         this.team = data.data
         this.move(`/teams/detail/${id}`)
+        this.getBackground(
+          "META. MAJOR. WINS. LOSSES. PERCENTAGE. GLORY. CHASE. HEAD TO HEAD. AEGIS OF IMMORTALS. CHAMPIONS"
+        )
       } catch (err) {
         console.log(err)
       }
@@ -149,6 +157,9 @@ export const usePoofStore = defineStore({
           url: `https://api.opendota.com/api/players/${id}`,
         })
         this.playerDetail = data
+        this.getBackground(
+          "META. GAME. SNATCH. AGI. STR. INT. RANGE. ATTACK. CARRY. DISABLER. NUKER. INITIATOR"
+        )
         this.move(`/profile/${id}`)
       } catch (err) {
         console.log(err)
@@ -165,6 +176,9 @@ export const usePoofStore = defineStore({
           },
         })
         this.matches = data.data
+        this.getBackground(
+          "STATS. KILLS. DEATHS. ASSISTS. GOLD PER MINUTE. EXP PER MINUTE. WINS. LOSSES. TANGINA BOBO."
+        )
         this.move("/matches")
       } catch (err) {
         console.log(err)

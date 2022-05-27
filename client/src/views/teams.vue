@@ -1,13 +1,13 @@
 <script>
-import { mapActions, mapState } from "pinia"
+import { mapActions, mapWritableState } from "pinia"
 import { usePoofStore } from "../stores/counter"
 
 export default {
   computed: {
-    ...mapState(usePoofStore, ["teams"]),
+    ...mapWritableState(usePoofStore, ["teams", "background"]),
   },
   methods: {
-    ...mapActions(usePoofStore, ["getTeams", "getTeamDetail"]),
+    ...mapActions(usePoofStore, ["getTeams", "getTeamDetail", "getBackground"]),
     convert(value) {
       const msec = value * 1000
       const now = new Date(msec)
@@ -42,12 +42,16 @@ export default {
     },
   },
   created() {
+    this.getBackground(
+      "META. MAJOR. WINS. LOSSES. PERCENTAGE. GLORY. CHASE. HEAD TO HEAD. AEGIS OF IMMORTALS. CHAMPIONS"
+    )
     this.getTeams(this.$route.params.page)
   },
 }
 </script>
 
 <template>
+  <img :src="background" class="absolute opacity-30" alt="" />
   <div class="container flex justify-center mx-auto">
     <div class="flex flex-col">
       <div class="w-full">

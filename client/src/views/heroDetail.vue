@@ -1,20 +1,27 @@
 <script>
-import { mapState } from "pinia"
+import { mapState, mapWritableState, mapActions } from "pinia"
 import { usePoofStore } from "../stores/counter"
 
 export default {
   computed: {
     ...mapState(usePoofStore, ["heroDetail"]),
+    ...mapWritableState(usePoofStore, ["background"]),
   },
   methods: {
+    ...mapActions(usePoofStore, ["getBackground"]),
     generateLink(string) {
       return `https://steamcdn-a.akamaihd.net${string}`
     },
   },
-  created() {},
+  created() {
+    this.getBackground(
+      "META. GAME. SNATCH. AGI. STR. INT. RANGE. ATTACK. CARRY. DISABLER. NUKER. INITIATOR"
+    )
+  },
 }
 </script>
 <template>
+  <img :src="background" class="absolute opacity-30" alt="" />
   <div
     class="px-6 pb-10 pt-10 flex-row mt-20 mx-auto relative text-zinc-200 w-1/2 rounded-lg bg-gradient-to-br from-zinc-700 to-transparent shadow-xl"
   >

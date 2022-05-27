@@ -4,10 +4,10 @@ import { usePoofStore } from "../stores/counter"
 
 export default {
   computed: {
-    ...mapWritableState(usePoofStore, ["matches"]),
+    ...mapWritableState(usePoofStore, ["matches", "background"]),
   },
   methods: {
-    ...mapActions(usePoofStore, ["getUser"]),
+    ...mapActions(usePoofStore, ["getUser", "getBackground"]),
     generateLink(string) {
       return `https://steamcdn-a.akamaihd.net${string}`
     },
@@ -19,6 +19,9 @@ export default {
     },
   },
   created() {
+    this.getBackground(
+      "STATS. KILLS. DEATHS. ASSISTS. GOLD PER MINUTE. EXP PER MINUTE. WINS. LOSSES. TANGINA BOBO."
+    )
     this.getUser()
   },
 }

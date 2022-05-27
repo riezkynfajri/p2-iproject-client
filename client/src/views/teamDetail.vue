@@ -4,10 +4,10 @@ import { usePoofStore } from "../stores/counter"
 
 export default {
   computed: {
-    ...mapWritableState(usePoofStore, ["team"]),
+    ...mapWritableState(usePoofStore, ["team", "background"]),
   },
   methods: {
-    ...mapActions(usePoofStore, ["getTeamDetail", "getProProfile"]),
+    ...mapActions(usePoofStore, ["getTeamDetail", "getProProfile", "getBackground"]),
     rate(win, lose) {
       const total = win + lose
       let result = win / total
@@ -16,11 +16,15 @@ export default {
     },
   },
   created() {
+    this.getBackground(
+      "META. MAJOR. WINS. LOSSES. PERCENTAGE. GLORY. CHASE. HEAD TO HEAD. AEGIS OF IMMORTALS. CHAMPIONS"
+    )
     this.getTeamDetail(this.$route.params.team_id)
   },
 }
 </script>
 <template>
+  <img :src="background" class="absolute opacity-30" alt="" />
   <div
     class="px-6 pb-10 pt-10 flex-row mt-20 mx-32 text-zinc-200 pb-200 w-4/5 rounded-lg bg-gradient-to-br from-zinc-700 to-transparent shadow-xl"
   >

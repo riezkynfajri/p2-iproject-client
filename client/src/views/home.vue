@@ -4,10 +4,10 @@ import { usePoofStore } from "../stores/counter"
 
 export default {
   computed: {
-    ...mapWritableState(usePoofStore, ["heroes", "heroDetail"]),
+    ...mapWritableState(usePoofStore, ["heroes", "heroDetail", "background"]),
   },
   methods: {
-    ...mapActions(usePoofStore, ["home", "move"]),
+    ...mapActions(usePoofStore, ["home", "move", "getBackground"]),
     generateLink(string) {
       return `https://steamcdn-a.akamaihd.net${string}`
     },
@@ -18,16 +18,23 @@ export default {
     },
     save(data) {
       this.heroDetail = data
+      this.getBackground(
+        "META. GAME. SNATCH. AGI. STR. INT. RANGE. ATTACK. CARRY. DISABLER. NUKER. INITIATOR"
+      )
       this.move(`/heroes/${data.id}`)
     },
   },
   created() {
+    this.getBackground(
+      "HEROES. AGI. STR. INT. ?. WARDS. NOOB. EARTHBIND. SHOCKWAVE. TIDAL WAVE. BLACKHOLE. ENSNARE. HOOF STOMP. LASER. PEW PEW."
+    )
     this.home(this.$route.params.page)
   },
 }
 </script>
 
 <template>
+  <img :src="background" class="absolute opacity-30" alt="" />
   <div class="container flex justify-center mx-auto">
     <div class="flex flex-col">
       <div class="w-full">
