@@ -5,6 +5,7 @@ export const usePoofStore = defineStore({
   id: "poof",
   state: () => ({
     URL: "https://dota2poof.herokuapp.com",
+    // URL: "http://localhost:3000",
     username: null,
     signinData: {
       email: null,
@@ -32,10 +33,6 @@ export const usePoofStore = defineStore({
     },
     signout() {
       localStorage.clear()
-      // Toast.fire({
-      //   icon: "info",
-      //   title: "You've Signed Out",
-      // })
       this.move("/signin")
       this.signedin = false
     },
