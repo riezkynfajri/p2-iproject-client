@@ -19,9 +19,9 @@ export default {
     },
   },
   created() {
-    this.getBackground(
-      "STATS. KILLS. DEATHS. ASSISTS. GOLD PER MINUTE. EXP PER MINUTE. WINS. LOSSES. TANGINA BOBO."
-    )
+    // this.getBackground(
+    //   "STATS. KILLS. DEATHS. ASSISTS. GOLD PER MINUTE. EXP PER MINUTE. WINS. LOSSES. TANGINA BOBO."
+    // )
     this.getUser()
   },
 }

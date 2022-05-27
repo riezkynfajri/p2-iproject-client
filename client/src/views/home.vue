@@ -25,9 +25,9 @@ export default {
     },
   },
   created() {
-    this.getBackground(
-      "HEROES. AGI. STR. INT. ?. WARDS. NOOB. EARTHBIND. SHOCKWAVE. TIDAL WAVE. BLACKHOLE. ENSNARE. HOOF STOMP. LASER. PEW PEW."
-    )
+    // this.getBackground(
+    //   "HEROES. AGI. STR. INT. ?. WARDS. NOOB. EARTHBIND. SHOCKWAVE. TIDAL WAVE. BLACKHOLE. ENSNARE. HOOF STOMP. LASER. PEW PEW."
+    // )
     this.home(this.$route.params.page)
   },
 }

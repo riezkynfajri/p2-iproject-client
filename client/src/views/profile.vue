@@ -31,9 +31,9 @@ export default {
     },
   },
   created() {
-    this.getBackground(
-      "META. GAME. SNATCH. AGI. STR. INT. RANGE. ATTACK. CARRY. DISABLER. NUKER. INITIATOR"
-    )
+    // this.getBackground(
+    //   "META. GAME. SNATCH. AGI. STR. INT. RANGE. ATTACK. CARRY. DISABLER. NUKER. INITIATOR"
+    // )
     this.getProProfile(this.$route.params.id)
   },
 }

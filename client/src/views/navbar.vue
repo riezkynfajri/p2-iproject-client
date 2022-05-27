@@ -40,7 +40,6 @@ export default {
           @click="getTeams(1)"
           class="cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-sky-100 hover:text-white mr-4"
         >
-          <span><fa icon="bookmark" class="mr-2" /></span>
           Pro Teams
         </button>
       </div>

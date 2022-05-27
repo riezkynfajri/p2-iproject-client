@@ -42,16 +42,16 @@ export default {
     },
   },
   created() {
-    this.getBackground(
-      "META. MAJOR. WINS. LOSSES. PERCENTAGE. GLORY. CHASE. HEAD TO HEAD. AEGIS OF IMMORTALS. CHAMPIONS"
-    )
+    // this.getBackground(
+    //   "META. MAJOR. WINS. LOSSES. PERCENTAGE. GLORY. CHASE. HEAD TO HEAD. AEGIS OF IMMORTALS. CHAMPIONS"
+    // )
     this.getTeams(this.$route.params.page)
   },
 }
 </script>
 
 <template>
-  <img :src="background" class="absolute opacity-30" alt="" />
+  <!-- <img :src="background" class="absolute opacity-30" alt="" /> -->
   <div class="container flex justify-center mx-auto">
     <div class="flex flex-col">
       <div class="w-full">

@@ -16,9 +16,9 @@ export default {
     },
   },
   created() {
-    this.getBackground(
-      "META. MAJOR. WINS. LOSSES. PERCENTAGE. GLORY. CHASE. HEAD TO HEAD. AEGIS OF IMMORTALS. CHAMPIONS"
-    )
+    // this.getBackground(
+    //   "META. MAJOR. WINS. LOSSES. PERCENTAGE. GLORY. CHASE. HEAD TO HEAD. AEGIS OF IMMORTALS. CHAMPIONS"
+    // )
     this.getTeamDetail(this.$route.params.team_id)
   },
 }
