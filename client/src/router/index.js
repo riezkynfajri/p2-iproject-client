@@ -63,10 +63,14 @@ router.beforeEach((to, from) => {
       to.name === "profile" ||
       to.name === "teamDetail" ||
       to.name === "heroDetail" ||
-      to.name === "matches") &&
+      to.name === "matches" ||
+      to.path === "/") &&
     !localStorage.getItem("access_token")
   ) {
     return { name: "signin" }
+  }
+  if (to.path === "/" && localStorage.getItem("access_token")) {
+    return { path: "/1" }
   }
 })
 
