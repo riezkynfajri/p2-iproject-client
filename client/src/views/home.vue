@@ -34,7 +34,7 @@ export default {
 </script>
 
 <template>
-  <img :src="background" class="absolute opacity-30" alt="" />
+  <!-- <img :src="background" class="absolute opacity-30" alt="" /> -->
   <div class="container flex justify-center mx-auto">
     <div class="flex flex-col">
       <div class="w-full">
